@@ -4,6 +4,7 @@ import { Languages } from '../../Languages/Languages';
 import { addLanguage } from '../../redux/Language/LanguageActions';
 import { addTheme } from '../../redux/Mode/modeActions';
 import {
+	BackIcon,
 	CheckBox,
 	CheckBoxLabel,
 	CheckBoxWrapper,
@@ -16,6 +17,7 @@ import {
 	ProfileSettingsTitle,
 	ProfileSettingsWrapper,
 } from './ProfileSettings.styled';
+import { NavLink } from 'react-router-dom';
 
 export const ProfileSettings = ({ setTheme, setLang }) => {
 	const language_value = useRef();
@@ -51,6 +53,9 @@ export const ProfileSettings = ({ setTheme, setLang }) => {
 	return (
 		<ProfileSettingsWrapper theme={theme}>
 			<ProfileSettingsInner>
+				<BackIcon theme={theme} to={'/'}>
+					- Go to Main
+				</BackIcon>
 				<ProfileSettingsTitle theme={theme}>
 					{Languages[lang].userSettings.title}
 				</ProfileSettingsTitle>

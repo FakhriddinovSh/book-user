@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ProfileSettingsWrapper = styled.div`
@@ -110,4 +111,11 @@ export const CheckBox = styled.input`
 			transition: 0.2s;
 		}
 	}
+`;
+
+export const BackIcon = styled(NavLink)`
+	display: inline-block;
+	margin-bottom: 20px;
+	text-decoration: none;
+	color: ${(props) => (props.theme === 'dark' ? '#fff' : '#000')};
 `;

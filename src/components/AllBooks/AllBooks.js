@@ -38,7 +38,7 @@ export const AllBooks = () => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://book-bekend-production.up.railway.app/book/genreId/${params.id}`,
+				`https://book-bekend.onrender.com/book/genreId/${params.id}`,
 			)
 			.then((res) => {
 				setBooks({
@@ -57,7 +57,7 @@ export const AllBooks = () => {
 		evt.preventDefault();
 		axios
 			.get(
-				`https://book-bekend-production.up.railway.app/book/search?book=${searchBook.current.value}`,
+				`https://book-bekend.onrender.com/book/search?book=${searchBook.current.value}`,
 			)
 			.then((res) => setSearchedAuthor(res.data))
 			.catch((err) => console.log(err));

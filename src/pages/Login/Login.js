@@ -36,13 +36,10 @@ export const Login = () => {
 		},
 		onSubmit: (values) => {
 			axios
-				.post(
-					'https://book-bekend-production.up.railway.app/user/login',
-					{
-						email: values.email,
-						password: values.password,
-					},
-				)
+				.post('https://book-bekend.onrender.com/user/login', {
+					email: values.email,
+					password: values.password,
+				})
 				.then((res) => {
 					if (res.status === 201) {
 						JSON.stringify(

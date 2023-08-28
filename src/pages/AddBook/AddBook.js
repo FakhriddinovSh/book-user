@@ -35,16 +35,14 @@ export const AddBook = () => {
 	const lang = state.language.language;
 	useEffect(() => {
 		axios
-			.get(`https://book-bekend-production.up.railway.app/genre`)
+			.get(`https://book-bekend.onrender.com/genre`)
 			.then((res) => setGenre(res.data))
 			.catch((error) => console.log(error));
 	}, []);
 
 	const getAuthors = (genreId) => {
 		axios
-			.get(
-				`https://book-bekend-production.up.railway.app/author/genreId/${genreId}`,
-			)
+			.get(`https://book-bekend.onrender.com/author/genreId/${genreId}`)
 			.then((res) => setAuthor(res.data))
 			.catch((error) => console.log(error));
 	};
@@ -67,15 +65,11 @@ export const AddBook = () => {
 		formData.append('image', image);
 
 		axios
-			.post(
-				'https://book-bekend-production.up.railway.app/book',
-				formData,
-				{
-					headers: {
-						Authorization: state.token.token,
-					},
+			.post('https://book-bekend.onrender.com/book', formData, {
+				headers: {
+					Authorization: state.token.token,
 				},
-			)
+			})
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};

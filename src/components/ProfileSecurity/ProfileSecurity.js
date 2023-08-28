@@ -27,7 +27,7 @@ export const ProfileSecurity = () => {
 
 		axios
 			.put(
-				'https://book-bekend-production.up.railway.app/user/security',
+				'https://book-bekend.onrender.com/user/security',
 				{
 					email: user_email.current.value,
 					currentPassword: String(current_password.current.value),

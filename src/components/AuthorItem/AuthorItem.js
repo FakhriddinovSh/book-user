@@ -24,7 +24,7 @@ export const AuthorItem = ({
 		<Item theme={theme}>
 			<InnerLink to={`/singleAuthor/${id}`}>
 				<ItemImage
-					src={`https://book-bekend-production.up.railway.app/${image}`}
+					src={`https://book-bekend.onrender.com/${image}`}
 					alt={`${name}`}
 				/>
 				<ItemInnerWrapper>

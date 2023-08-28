@@ -41,16 +41,13 @@ export const Register = () => {
 		},
 		onSubmit: (values) => {
 			axios
-				.post(
-					'https://book-bekend-production.up.railway.app/user/register',
-					{
-						first_name: values.first_name,
-						last_name: values.last_name,
-						phone: String(values.phone),
-						email: values.email,
-						password: values.password,
-					},
-				)
+				.post('https://book-bekend.onrender.com/user/register', {
+					first_name: values.first_name,
+					last_name: values.last_name,
+					phone: String(values.phone),
+					email: values.email,
+					password: values.password,
+				})
 				.then((res) => {
 					if (res.status === 201) {
 						JSON.stringify(

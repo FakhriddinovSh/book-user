@@ -41,7 +41,7 @@ export const AddAuthor = () => {
 
 	useEffect(() => {
 		axios
-			.get('https://book-bekend-production.up.railway.app/genre')
+			.get('https://book-bekend.onrender.com/genre')
 			.then((res) => setGenres(res.data))
 			.catch((error) => console.log(error));
 	}, []);

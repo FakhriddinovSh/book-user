@@ -35,14 +35,11 @@ export const SingleBook = () => {
 	const lang = state.language.language;
 	useEffect(() => {
 		axios
-			.get(
-				`https://book-bekend-production.up.railway.app/book/bookId/${params.id}`,
-				{
-					headers: {
-						Authorization: state.token.token,
-					},
+			.get(`https://book-bekend.onrender.com/book/bookId/${params.id}`, {
+				headers: {
+					Authorization: state.token.token,
 				},
-			)
+			})
 			.then((res) => setSingleBook(res.data))
 			.catch((err) => console.log(err));
 	}, [params.id]);
@@ -50,7 +47,7 @@ export const SingleBook = () => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://book-bekend-production.up.railway.app/author/books/${singleBook.author_id}`,
+				`https://book-bekend.onrender.com/author/books/${singleBook.author_id}`,
 				{
 					headers: {
 						Authorization: state.token.token,
@@ -66,7 +63,7 @@ export const SingleBook = () => {
 			<SingleBookWrapper>
 				<SingleBookLeftWrapper>
 					<img
-						src={`https://book-bekend-production.up.railway.app/${singleBook.image}`}
+						src={`https://book-bekend.onrender.com/${singleBook.image}`}
 						width="505"
 						height="681"
 						alt="single book"

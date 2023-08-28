@@ -35,14 +35,16 @@ export const AddBook = () => {
 	const lang = state.language.language;
 	useEffect(() => {
 		axios
-			.get(`https://book-bekend.onrender.com/genre`)
+			.get(`https://book-bekend-production.up.railway.app/genre`)
 			.then((res) => setGenre(res.data))
 			.catch((error) => console.log(error));
 	}, []);
 
 	const getAuthors = (genreId) => {
 		axios
-			.get(`https://book-bekend.onrender.com/author/genreId/${genreId}`)
+			.get(
+				`https://book-bekend-production.up.railway.app/author/genreId/${genreId}`,
+			)
 			.then((res) => setAuthor(res.data))
 			.catch((error) => console.log(error));
 	};
@@ -64,23 +66,16 @@ export const AddBook = () => {
 		formData.append('description', book_comment?.current?.value);
 		formData.append('image', image);
 
-		// console.log(
-		// 	book_title.current.value,
-		// 	book_pages.current.value,
-		// 	book_year.current.value,
-		// 	book_price.current.value,
-		// 	book_genre.current.value,
-		// 	book_author.current.value,
-		// 	book_comment.current.value,
-		// 	image,
-		// );
-
 		axios
-			.post('https://book-bekend.onrender.com/book', formData, {
-				headers: {
-					Authorization: state.token.token,
+			.post(
+				'https://book-bekend-production.up.railway.app/book',
+				formData,
+				{
+					headers: {
+						Authorization: state.token.token,
+					},
 				},
-			})
+			)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};

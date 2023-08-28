@@ -34,7 +34,7 @@ export const Home = () => {
 
 	useEffect(() => {
 		axios
-			.get('https://book-bekend.onrender.com/user/me', {
+			.get('https://book-bekend-production.up.railway.app/user/me', {
 				headers: {
 					Authorization: state.token.token,
 				},
@@ -76,7 +76,7 @@ export const Home = () => {
 									me?.last_name?.charAt(0)
 								) : (
 									<UserImage
-										src={`https://book-bekend.onrender.com/${me?.image}`}
+										src={`https://book-bekend-production.up.railway.app/${me?.image}`}
 									/>
 								)}
 

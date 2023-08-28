@@ -36,7 +36,7 @@ export const SingleAuthor = () => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://book-bekend.onrender.com/author/authorId/${params.id}`,
+				`https://book-bekend-production.up.railway.app/author/authorId/${params.id}`,
 				{
 					headers: {
 						Authorization: state.token.token,
@@ -52,7 +52,7 @@ export const SingleAuthor = () => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://book-bekend.onrender.com/author/books/${usersBookId}`,
+				`https://book-bekend-production.up.railway.app/author/books/${usersBookId}`,
 				{
 					headers: {
 						Authorization: state.token.token,
@@ -68,7 +68,7 @@ export const SingleAuthor = () => {
 			<SingleAuthorInner>
 				<div>
 					<img
-						src={`https://book-bekend.onrender.com/${authorInfo.image}`}
+						src={`https://book-bekend-production.up.railway.app/${authorInfo.image}`}
 						width="505"
 						height="681"
 						alt="Hoshimov"

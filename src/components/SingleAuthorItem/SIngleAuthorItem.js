@@ -17,7 +17,7 @@ export const SIngleAuthorItem = ({ image, title, author_id, path }) => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://book-bekend.onrender.com/author/authorId/${author_id}`,
+				`https://book-bekend-production.up.railway.app/author/authorId/${author_id}`,
 				{
 					headers: {
 						Authorization: state.token.token,
@@ -34,7 +34,7 @@ export const SIngleAuthorItem = ({ image, title, author_id, path }) => {
 		<SingleAuthorItemLink to={`/singleBook/${bookId}`}>
 			<SingleAuthorListItem>
 				<SingleAuthorListImage
-					src={`https://book-bekend.onrender.com/${image}`}
+					src={`https://book-bekend-production.up.railway.app/${image}`}
 					width="190"
 					height="283"
 					alt="book"

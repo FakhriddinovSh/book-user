@@ -40,11 +40,15 @@ export const ProfileChange = () => {
 		formData.append('image', image);
 
 		axios
-			.put('https://book-bekend.onrender.com/user/account', formData, {
-				headers: {
-					Authorization: state.token.token,
+			.put(
+				'https://book-bekend-production.up.railway.app/user/account',
+				formData,
+				{
+					headers: {
+						Authorization: state.token.token,
+					},
 				},
-			})
+			)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};
